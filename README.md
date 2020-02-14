@@ -1,4 +1,4 @@
-# recruit-mgt
+# sstir-vic-admin
 
 ## Project setup
 ```
