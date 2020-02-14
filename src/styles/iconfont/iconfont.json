@@ -1,0 +1,44 @@
+{
+  "id": "1639564",
+  "name": "sstir-vic",
+  "font_family": "iconfont",
+  "css_prefix_text": "vic-icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "3248701",
+      "name": "数据",
+      "font_class": "shuju",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "12004961",
+      "name": "Data",
+      "font_class": "Data",
+      "unicode": "eaac",
+      "unicode_decimal": 60076
+    },
+    {
+      "icon_id": "595481",
+      "name": "setting",
+      "font_class": "setting",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "5918966",
+      "name": "task",
+      "font_class": "task",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "12785623",
+      "name": "user",
+      "font_class": "user",
+      "unicode": "e820",
+      "unicode_decimal": 59424
+    }
+  ]
+}

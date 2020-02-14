@@ -1,0 +1,57 @@
+{
+  "name": "science-plus",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve --open",
+    "build": "vue-cli-service build --modern",
+    "build:qa": "vue-cli-service build --mode qa --modern",
+    "lint": "vue-cli-service lint --fix"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "blueimp-md5": "^2.12.0",
+    "core-js": "^2.6.5",
+    "date-fns": "^2.0.1",
+    "driver.js": "^0.9.7",
+    "el-tree-select": "^3.1.4",
+    "element-china-area-data": "^4.1.2",
+    "element-ui": "^2.12.0",
+    "js-cookie": "^2.2.1",
+    "normalize.css": "^8.0.1",
+    "nprogress": "^0.2.0",
+    "pdfvuer": "^1.4.0",
+    "qs": "^6.9.0",
+    "screenfull": "^4.2.1",
+    "v-distpicker": "^1.2.1",
+    "vue": "^2.6.10",
+    "vue-pdf": "^4.0.7",
+    "vue-router": "^3.1.3",
+    "vue-splitpane": "^1.0.4",
+    "vuedraggable": "^2.23.1",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.11.0",
+    "@vue/cli-plugin-eslint": "^3.11.0",
+    "@vue/cli-service": "^3.11.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "less": "^3.0.4",
+    "less-loader": "^5.0.0",
+    "lint-staged": "^8.1.5",
+    "script-ext-html-webpack-plugin": "^2.1.4",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}
