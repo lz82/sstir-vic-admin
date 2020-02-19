@@ -137,7 +137,6 @@ export default {
           }
           try {
             await systemApi.changePwd(postData)
-            debugger
             this.showSuccess = true
             setInterval(() => {
               this.sec = (this.sec - 1) >= 0 ? (this.sec - 1) : 0

@@ -8,7 +8,7 @@ const instance = axios.create({
   baseURL: appConfig.baseUrl,
   timeout: 1000 * 60 * 10 // 10 min
 })
-
+// instance.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 let reqList = []
 
 // Add a request interceptor
@@ -30,7 +30,7 @@ instance.interceptors.request.use(
     })
     const userToken = store.getters.token
     if (userToken) {
-      config.headers['authorization'] = 'Bearer ' + userToken
+      config.headers['authorization'] = userToken
     }
     return config
   },

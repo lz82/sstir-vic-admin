@@ -89,7 +89,7 @@ export default {
     },
 
     async onQuery() {
-      const { total, list } = await userMgtApi.queryUserlist(this.queryModel)
+      const { total, records: list } = await userMgtApi.queryUserlist(this.queryModel)
       this.tblCnt = total
       this.tblData = list
     }

@@ -80,7 +80,7 @@ export default {
     },
 
     async onQuery() {
-      const { total, list } = await dataMgtApi.queryDatalist(this.queryModel)
+      const { total, records: list } = await dataMgtApi.queryDatalist(this.queryModel)
       this.tblCnt = total
       this.tblData = list
     }

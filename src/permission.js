@@ -37,7 +37,6 @@ router.beforeEach((to, from, next) => {
       NProgress.done() // hack method 如果当前页就是首页，那么不会触发afterEach，因此需要手动触发
     } else {
       if (store.getters.roles.length === 0) {
-        debugger
         store.dispatch('getUserInfo')
           .then(roles => {
             // 根据role动态添加路由
@@ -57,7 +56,6 @@ router.beforeEach((to, from, next) => {
               })
           })
           .catch(err => {
-            debugger
             console.log(err)
             // Message.error(err)
             removeToken()

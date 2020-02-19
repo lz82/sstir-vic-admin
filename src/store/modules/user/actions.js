@@ -48,7 +48,7 @@ export default {
   logIn({ commit }, userInfo) {
     return new Promise(async (resolve, reject) => {
       try {
-        const { token } = await loginApi.checkLogin(userInfo)
+        const token = await loginApi.checkLogin(userInfo)
         const userName = userInfo.userName
         commit(MutationTypes.SET_TOKEN, token)
         commit(MutationTypes.SET_USER_INFO, {

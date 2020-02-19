@@ -9,7 +9,7 @@ let sources = []
 export function AppPost(url, data) {
   return new Promise((resolve, reject) => {
     instance
-      .post(url, data, {
+      .post(url, qs.stringify(data), {
         // 取消请求
         cancelToken: new CancelToken(function executor(c) {
           // An executor function receives a cancel function as a parameter

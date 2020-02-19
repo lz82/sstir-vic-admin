@@ -44,7 +44,11 @@
             prop="taskStatus"
             :show-overflow-tooltip="true"
             width="200px"
-          ></el-table-column>
+          >
+            <template slot-scope="scope">
+              <span>{{scope.row.taskStatus === '1' ? '已完成' : '进行中'}}</span>
+            </template>
+          </el-table-column>
         </el-table>
 
         <el-pagination
@@ -95,7 +99,7 @@ export default {
     },
 
     async onQuery() {
-      const { total, list } = await taskMgtApi.queryTasklist(this.queryModel)
+      const { total, records: list } = await taskMgtApi.queryTasklist(this.queryModel)
       this.tblCnt = total
       this.tblData = list
     }
