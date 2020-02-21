@@ -89,9 +89,15 @@ export default {
     },
 
     async onQuery() {
-      const { total, records: list } = await userMgtApi.queryUserlist(this.queryModel)
-      this.tblCnt = total
-      this.tblData = list
+      try {
+        const { total, records: list } = await userMgtApi.queryUserlist(this.queryModel)
+        this.tblCnt = total
+        this.tblData = list
+      } catch (err) {
+        this.$message.error(err)
+        this.tblCnt = 0
+        this.tblData = []
+      }
     }
   }
 }

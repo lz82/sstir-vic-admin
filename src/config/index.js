@@ -9,10 +9,10 @@ const getBaseUrl = () => {
       return 'http://10.11.0.91:9999'
     // qa
     case 'qa':
-      return 'http://rap2api.taobao.org/app/mock/244399'
+      return 'http://10.11.0.91:9999'
     // production
     default:
-      return 'http://rap2api.taobao.org/app/mock/244399'
+      return 'http://api.admin.covid.sstir.cn'
   }
 }
 

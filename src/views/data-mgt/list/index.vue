@@ -4,7 +4,7 @@
       v-if="querySchema.length > 0"
       :query-schema="querySchema"
       :query-model="queryModel"
-      @queryclick="onQuery"
+      @queryclick="onQueryClick"
       :showAdd="false"
     />
     <query-tbl>
@@ -80,9 +80,15 @@ export default {
     },
 
     async onQuery() {
-      const { total, records: list } = await dataMgtApi.queryDatalist(this.queryModel)
-      this.tblCnt = total
-      this.tblData = list
+      try {
+        const { total, data: list } = await dataMgtApi.queryDatalist(this.queryModel)
+        this.tblCnt = total
+        this.tblData = list
+      } catch (err) {
+        this.$message.error(err)
+        this.tblCnt = 0
+        this.tblData = []
+      }
     }
   }
 }

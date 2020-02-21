@@ -46,7 +46,7 @@
             width="200px"
           >
             <template slot-scope="scope">
-              <span>{{scope.row.taskStatus === '1' ? '已完成' : '进行中'}}</span>
+              <span>{{ scope.row.taskStatus === '1' ? '已完成' : '进行中' }}</span>
             </template>
           </el-table-column>
         </el-table>
@@ -87,21 +87,29 @@ export default {
 
   methods: {
     initData() {
-      const statusList = [{
-        value: 0,
-        text: '进行中'
-      },
-      {
-        value: 1,
-        text: '完成'
-      }]
+      const statusList = [
+        {
+          value: 0,
+          text: '进行中'
+        },
+        {
+          value: 1,
+          text: '完成'
+        }
+      ]
       this.querySchema.push(new this.$Schema('taskStatus', 'select', '状态:', '请选择', statusList))
     },
 
     async onQuery() {
-      const { total, records: list } = await taskMgtApi.queryTasklist(this.queryModel)
-      this.tblCnt = total
-      this.tblData = list
+      try {
+        const { total, records: list } = await taskMgtApi.queryTasklist(this.queryModel)
+        this.tblCnt = total
+        this.tblData = list
+      } catch (err) {
+        this.$message.error(err)
+        this.tblData = []
+        this.tblCnt = 0
+      }
     }
   }
 }

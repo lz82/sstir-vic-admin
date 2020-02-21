@@ -54,7 +54,7 @@ export function AppGet(url, data) {
         if (res.data.code === '200') {
           resolve(res.data.data)
         } else {
-          reject(res.data.message)
+          reject(res.data.msg)
         }
       })
       .catch(() => {
