@@ -1,7 +1,7 @@
 <template>
   <div class="login-wrapper">
     <div class="header">
-      <span class="logo-txt">未知病毒检测平台-后台管理中心</span>
+      <span class="logo-txt">病毒基因检测平台-后台管理中心</span>
     </div>
     <div class="login-con">
       <el-card class="login-card">

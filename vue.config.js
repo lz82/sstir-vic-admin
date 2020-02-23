@@ -5,7 +5,7 @@ function resolve(dir) {
   return path.join(__dirname, dir)
 }
 
-const name = '未知病毒检测平台-后台管理' // page title
+const name = '病毒基因检测平台-后台管理' // page title
 
 // If your port is set to 80,
 // use administrator privileges to execute the command line.
