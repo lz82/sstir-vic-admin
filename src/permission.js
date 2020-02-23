@@ -58,6 +58,7 @@ router.beforeEach((to, from, next) => {
           .catch(err => {
             console.log(err)
             // Message.error(err)
+            Message.error('获取用户信息失败，请重新登陆')
             removeToken()
             next(`/login?redirect=${to.path}`)
             NProgress.done()
