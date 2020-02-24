@@ -32,7 +32,7 @@
             width="200px"
           ></el-table-column>
           <el-table-column
-            label="运行时间"
+            label="运行时间（分钟)"
             align="center"
             prop="duration"
             :show-overflow-tooltip="true"

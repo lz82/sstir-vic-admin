@@ -25,12 +25,16 @@
             width="250px"
           ></el-table-column>
           <el-table-column
-            label="大小"
+            label="大小(GB)"
             align="center"
             prop="dataSize"
             :show-overflow-tooltip="true"
             width="200px"
-          ></el-table-column>
+          >
+            <template slot-scope="scope">
+              {{ calcDataSize(scope.row.dataSize) }}
+            </template>
+          </el-table-column>
           <el-table-column
             label="上传日期"
             align="center"
@@ -89,6 +93,10 @@ export default {
         this.tblCnt = 0
         this.tblData = []
       }
+    },
+
+    calcDataSize(val) {
+      return (val / Math.pow(1024, 3)).toFixed(2)
     }
   }
 }

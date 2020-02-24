@@ -90,7 +90,17 @@ export default {
 
     async onQuery() {
       try {
-        const { total, records: list } = await userMgtApi.queryUserlist(this.queryModel)
+        const postData = Object.assign(this.queryModel, {
+          startTime:
+            this.queryModel.regTime && this.queryModel.regTime.length === 2
+              ? this.queryModel.regTime[0]
+              : null,
+          endTime:
+            this.queryModel.regTime && this.queryModel.regTime.length === 2
+              ? this.queryModel.regTime[1]
+              : null
+        })
+        const { total, records: list } = await userMgtApi.queryUserlist(postData)
         this.tblCnt = total
         this.tblData = list
       } catch (err) {

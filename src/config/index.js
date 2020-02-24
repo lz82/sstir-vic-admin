@@ -6,7 +6,7 @@ const getBaseUrl = () => {
   switch (env) {
     // development
     case 'dev':
-      return 'http://10.11.0.91:9999'
+      return 'http://api.admin.covid.sstir.cn'
     // qa
     case 'qa':
       return 'http://10.11.0.91:9999'

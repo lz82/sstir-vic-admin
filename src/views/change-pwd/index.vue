@@ -43,7 +43,7 @@
 
 <script>
 import { systemApi } from '@/service'
-import md5 from 'blueimp-md5'
+
 export default {
   name: 'ChangePwd',
 
@@ -131,9 +131,8 @@ export default {
       this.$refs.form.validate(async valid => {
         if (valid) {
           const postData = {
-            oldPassword: md5(this.model.oldPwd),
-            newPassword: md5(this.model.newPwd),
-            userId: ''
+            pwd: this.model.oldPwd,
+            newpwd: this.model.newPwd
           }
           try {
             await systemApi.changePwd(postData)
