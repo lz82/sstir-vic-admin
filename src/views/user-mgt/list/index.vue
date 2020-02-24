@@ -85,7 +85,7 @@ export default {
     initData() {
       this.querySchema.push(new this.$Schema('userName', 'input', '用户名:'))
       this.querySchema.push(new this.$Schema('orgName', 'input', '机构名称:'))
-      this.querySchema.push(new this.$Schema('regTime', 'singledate', '注册时间:'))
+      this.querySchema.push(new this.$Schema('regTime', 'daterange', '注册时间:'))
     },
 
     async onQuery() {
