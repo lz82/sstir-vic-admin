@@ -46,7 +46,7 @@
             width="200px"
           >
             <template slot-scope="scope">
-              <span>{{ scope.row.taskStatus === '1' ? '已完成' : '进行中' }}</span>
+              <span>{{ scope.row.taskStatus === '2' ? '完成' : '进行中' }}</span>
             </template>
           </el-table-column>
         </el-table>
@@ -89,11 +89,11 @@ export default {
     initData() {
       const statusList = [
         {
-          value: 0,
+          value: 1,
           text: '进行中'
         },
         {
-          value: 1,
+          value: 2,
           text: '完成'
         }
       ]
