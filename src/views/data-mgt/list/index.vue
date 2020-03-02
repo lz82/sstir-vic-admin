@@ -52,6 +52,7 @@
           :page-size="queryModel.pageSize"
           layout="total,  prev, pager, next, sizes"
           :total="tblCnt"
+          class="pagination"
         ></el-pagination>
       </div>
     </query-tbl>
