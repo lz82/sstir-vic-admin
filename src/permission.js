@@ -56,6 +56,7 @@ router.beforeEach((to, from, next) => {
               })
           })
           .catch(err => {
+            debugger
             console.log(err)
             // Message.error(err)
             Message.error('获取用户信息失败，请重新登陆')

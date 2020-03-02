@@ -1,6 +1,8 @@
 import instance from './axios'
 import axios from 'axios'
 import qs from 'qs'
+import { removeToken } from '@/utils/auth'
+import router from '@/router'
 
 const CancelToken = axios.CancelToken
 
@@ -20,6 +22,9 @@ export function AppPost(url, data) {
         console.log(res)
         if (res.data.code === '200') {
           resolve(res.data.data)
+        } else if (res.data.code === '403') {
+          removeToken()
+          router.push('/login')
         } else {
           reject(res.data.msg)
         }
@@ -40,7 +45,7 @@ export function AppGet(url, data) {
           params: {
             ...data
           },
-          paramsSerializer: params => {
+          paramsSerializer: (params) => {
             return qs.stringify(params, { indices: false })
           }
         },
@@ -53,6 +58,9 @@ export function AppGet(url, data) {
       .then((res) => {
         if (res.data.code === '200') {
           resolve(res.data.data)
+        } else if (res.data.code === '403') {
+          removeToken()
+          router.push('/login')
         } else {
           reject(res.data.msg)
         }

@@ -46,7 +46,7 @@
             width="200px"
           >
             <template slot-scope="scope">
-              <span>{{ scope.row.taskStatus === '2' ? '完成' : '进行中' }}</span>
+              <span>{{ getOrderStatus(scope.row.taskStatus) }}</span>
             </template>
           </el-table-column>
         </el-table>
@@ -89,12 +89,20 @@ export default {
     initData() {
       const statusList = [
         {
-          value: 1,
+          value: '0',
+          text: '队列中'
+        },
+        {
+          value: '1',
           text: '进行中'
         },
         {
-          value: 2,
+          value: '2',
           text: '完成'
+        },
+        {
+          value: '3',
+          text: '挂起'
         }
       ]
       this.querySchema.push(new this.$Schema('taskStatus', 'select', '状态:', '请选择', statusList))
@@ -109,6 +117,19 @@ export default {
         this.$message.error(err)
         this.tblData = []
         this.tblCnt = 0
+      }
+    },
+
+    getOrderStatus(status) {
+      switch (status) {
+        case '0':
+          return '队列中'
+        case '1':
+          return '进行中'
+        case '2':
+          return '完成'
+        case '3':
+          return '挂起'
       }
     }
   }

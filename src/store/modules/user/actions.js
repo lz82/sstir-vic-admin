@@ -22,6 +22,7 @@ export default {
         })
         resolve(roles)
       } catch (err) {
+        debugger
         reject(err)
       }
     })
