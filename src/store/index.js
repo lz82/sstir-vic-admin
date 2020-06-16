@@ -9,7 +9,7 @@ import permission from './modules/permission'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
   modules: {
     user,
     app,
@@ -17,3 +17,5 @@ export default new Vuex.Store({
     permission
   }
 })
+
+export default store

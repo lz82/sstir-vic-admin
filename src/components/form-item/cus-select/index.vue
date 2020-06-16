@@ -27,7 +27,6 @@ export default {
 
   methods: {
     getDefaultVal (item) {
-      console.log(item)
       if (item.defaultVal === undefined || item.defaultVal === '') {
         return []
       } else {

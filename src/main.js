@@ -15,7 +15,6 @@ import App from './app.vue'
 import router from './router'
 import store from './store'
 import './permission'
-
 // 引入插件
 import * as Plugins from './plugins'
 

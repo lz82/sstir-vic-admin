@@ -22,7 +22,6 @@ export default {
         })
         resolve(roles)
       } catch (err) {
-        debugger
         reject(err)
       }
     })
@@ -38,6 +37,7 @@ export default {
   },
 
   logOut({ commit }) {
+    console.log('logout')
     return new Promise((resolve, reject) => {
       commit(MutationTypes.SET_TOKEN, '')
       commit(MutationTypes.SET_USER_ROLES, [])

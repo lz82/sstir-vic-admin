@@ -3,6 +3,7 @@ import axios from 'axios'
 import qs from 'qs'
 import { removeToken } from '@/utils/auth'
 import router from '@/router'
+import store from '@/store'
 
 const CancelToken = axios.CancelToken
 
@@ -19,11 +20,11 @@ export function AppPost(url, data) {
         })
       })
       .then((res) => {
-        console.log(res)
         if (res.data.code === '200') {
           resolve(res.data.data)
         } else if (res.data.code === '403') {
           removeToken()
+          store.dispatch('logOut')
           router.push('/login')
         } else {
           reject(res.data.msg)
@@ -60,6 +61,7 @@ export function AppGet(url, data) {
           resolve(res.data.data)
         } else if (res.data.code === '403') {
           removeToken()
+          store.dispatch('logOut')
           router.push('/login')
         } else {
           reject(res.data.msg)
