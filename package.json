@@ -21,7 +21,7 @@
     "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
     "pdfvuer": "^1.4.0",
-    "qs": "^6.9.0",
+    "qs": "^6.9.7",
     "screenfull": "^4.2.1",
     "v-distpicker": "^1.2.1",
     "vue": "^2.6.10",
